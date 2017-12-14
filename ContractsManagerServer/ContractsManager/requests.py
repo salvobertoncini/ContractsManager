@@ -37,8 +37,6 @@ class Requests:
                     for a in c[r]:
                         contractsList.append(a)
 
-
-
         response.setResponse("contractsList", json_util.dumps(contractsList))
         response.setResponse("response", True)
 
