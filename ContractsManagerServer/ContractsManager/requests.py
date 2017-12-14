@@ -21,10 +21,12 @@ class Requests:
     def getReq(self, r):
         return r["r"]
 
-    def functionalpha(self, data):
+    def GetAllWebContracts(self):
 
         # Initialize response
         response = responses.Responses()
+        response.setResponse("response", True)
+        response.setResponse("test", "test")
 
         return response
 
@@ -42,8 +44,8 @@ class Requests:
         print "request: " + r
 
         # Switch 'r' for every possible request
-        if r == "APIname":
-            response = self.functionalpha(data)
+        if r == "GetAllWebContracts":
+            response = self.GetAllWebContracts()
 
         print "response: "
         print response.getResponse()

@@ -9,27 +9,27 @@ import 'rxjs/add/observable/throw'
 @Injectable()
 export class HttpSerService {
 
-  //Url target server
-  serverUrl = "http://127.0.0.1:8000/Server/";
+  /*Url target server*/
+  serverUrl = 'http://127.0.0.1:8000/';
 
   // constructor
   constructor (private _http: Http) {}
 
-  //append paramethers to headers requests. Content-Type application/json this time.
+  // append paramethers to headers requests. Content-Type application/json this time.
   createAuthorizationHeader(headers: Headers) {
     headers.append('Content-Type', 'application/json; charset=UTF-8')
   }
 
-  //GET method.
+  // GET method.
   getMethod(): Observable<any> {
 
-    //create header for request
+    // create header for request
     let headers = new Headers();
 
-    //set our header
+    // set our header
     this.createAuthorizationHeader(headers);
 
-    //GET request with Server Url and headers. Return a response, mapped in json, printed in console.log().
+    // GET request with Server Url and headers. Return a response, mapped in json, printed in console.log().
     // Catch errors if fail.
     return this._http
       .get(this.serverUrl, {headers: headers})
@@ -38,28 +38,28 @@ export class HttpSerService {
       .catch(this.handleError);
   }
 
-  //POST method
+  // POST method
   postMethod(data): Observable<any> {
 
-    //create header for request
+    // create header for request
     let headers = new Headers();
 
-    //set our header
+    // set our header
     this.createAuthorizationHeader(headers);
 
-    //POST request with headers, server Url and JSON data. Return a response, mapped in JSON. Catch errors if fail.
+    // POST request with headers, server Url and JSON data. Return a response, mapped in JSON. Catch errors if fail.
     return this._http.post(this.serverUrl, JSON.stringify(data), {headers: headers})
       .map((response:Response) => response.json())
       .catch(this.handleError);
 
   }
 
-  //Error Response
+  // Error Response
   private handleError(error: Response)
   {
 
     // Create a customized error message, printed if some error is catched
-    let message = "Error status code "+error.status+" at "+error.url;
+    let message = 'Error status code '+error.status+" at "+error.url;
     return Observable.throw(message);
   }
 }

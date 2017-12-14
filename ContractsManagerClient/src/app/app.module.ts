@@ -23,11 +23,13 @@ import {PagerService} from './_services/pagination/pager.service';
 import {HttpSerService} from './_services/http/http-ser.service';
 import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MostraContrattiWebComponent } from './mostra-contratti-web/mostra-contratti-web.component';
 
 // Array with all routing paths
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', redirectTo: '', pathMatch: 'full'},
+  {path: 'mostra-contratti-web', component: MostraContrattiWebComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     HomeComponent,
     ToolbarComponent,
+    MostraContrattiWebComponent,
   ],
   imports: [
     RouterModule.forRoot(
