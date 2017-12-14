@@ -14,8 +14,7 @@ class Requests:
             self.req = req
 
 
-            # getters
-
+    # getters
     def getBody(self):
         return self.req
 
@@ -42,6 +41,27 @@ class Requests:
 
         return response
 
+    def GetAllSoftwareContracts(self):
+
+        # Initialize response
+        response = responses.Responses()
+        response.setResponse("response", False)
+
+        result = database.selectAllWebContracts()
+        contractsList = []
+
+        for c in result:
+            for r in c:
+                if r == "contratti software":
+                    for a in c[r]:
+                        contractsList.append(a)
+
+        response.setResponse("contractsList", json_util.dumps(contractsList))
+        response.setResponse("response", True)
+
+        return response
+
+
 
     def postRequest(self):
 
@@ -58,6 +78,8 @@ class Requests:
         # Switch 'r' for every possible request
         if r == "GetAllWebContracts":
             response = self.GetAllWebContracts()
+        elif r == "GetAllSoftwareContracts":
+            response = self.GetAllSoftwareContracts()
 
         print "response: "
         print response.getResponse()
