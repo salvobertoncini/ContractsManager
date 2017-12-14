@@ -14,7 +14,7 @@ export class MostraContrattiUserComponent implements OnInit {
   slug: string;
   private sub: any;
   req = {'r': 'GetAllUserContracts'};
-  variabile: any;
+  contractsList: any;
 
   constructor(private router: Router, private route: ActivatedRoute, private _sanitizer: DomSanitizer, private _httpService: HttpSerService) { }
 
@@ -35,7 +35,7 @@ export class MostraContrattiUserComponent implements OnInit {
 
           // if post response is succesful, transfers into devicesJSONList the result, else redirects at page-not-found
           if (response['response']) {
-            this.variabile = JSON.parse(response['contractsList']);
+            this.contractsList = JSON.parse(response['contractsList']);
           } else {
             this.router.navigate(['/page-not-found']);
           }

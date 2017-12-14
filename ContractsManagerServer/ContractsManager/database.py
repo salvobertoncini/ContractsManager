@@ -72,3 +72,18 @@ def selectAllWebContracts():
     closeMongoDB(client)
 
     return collection.find()
+
+
+def selectUserWebContracts():
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find()
+
+def selectAllUserContracts():
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find({"document": "contratto"})

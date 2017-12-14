@@ -62,6 +62,29 @@ class Requests:
         return response
 
 
+    def GetAllUserContracts(self):
+
+        # Initialize response
+        response = responses.Responses()
+        response.setResponse("contractsList", json_util.dumps(["Nessun contratto"]))
+
+        result = database.selectAllUserContracts()
+        contractsList = []
+
+        if result:
+            for c in result:
+                for r in c:
+                    if r == "titolo":
+                        for a in c[r]:
+                            contractsList.append(a)
+
+        if contractsList:
+            response.setResponse("contractsList", json_util.dumps(contractsList))
+
+        response.setResponse("response", True)
+
+        return response
+
 
     def postRequest(self):
 
@@ -76,7 +99,9 @@ class Requests:
         print "request: " + r
 
         # Switch 'r' for every possible request
-        if r == "GetAllWebContracts":
+        if r == "GetAllUserContracts":
+            response = self.GetAllUserContracts()
+        elif r == "GetAllWebContracts":
             response = self.GetAllWebContracts()
         elif r == "GetAllSoftwareContracts":
             response = self.GetAllSoftwareContracts()
