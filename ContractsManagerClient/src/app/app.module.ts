@@ -11,41 +11,6 @@ import {RouterModule, Routes} from '@angular/router';
 // Import for sending GET and SET request
 import {HttpModule} from '@angular/http';
 
-// Import all Material Design Component
-import {
-  MdAutocompleteModule,
-  MdButtonModule,
-  MdButtonToggleModule,
-  MdCardModule,
-  MdCheckboxModule,
-  MdChipsModule,
-  MdDatepickerModule,
-  MdDialogModule,
-  MdExpansionModule,
-  MdGridListModule,
-  MdIconModule,
-  MdInputModule,
-  MdListModule,
-  MdMenuModule,
-  MdNativeDateModule,
-  MdPaginatorModule,
-  MdProgressBarModule,
-  MdProgressSpinnerModule,
-  MdRadioModule,
-  MdRippleModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdSliderModule,
-  MdSlideToggleModule,
-  MdSnackBarModule,
-  MdSortModule,
-  MdTableModule,
-  MdTabsModule,
-  MdToolbarModule,
-  MdTooltipModule,
-  MdStepperModule,
-} from '@angular/material';
-
 // Import all components
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -57,6 +22,7 @@ import {AlertService} from './_services/alert/alert.service';
 import {PagerService} from './_services/pagination/pager.service';
 import {HttpSerService} from './_services/http/http-ser.service';
 import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 // Array with all routing paths
 const appRoutes: Routes = [
@@ -70,6 +36,7 @@ const appRoutes: Routes = [
     AppComponent,
     PageNotFoundComponent,
     HomeComponent,
+    ToolbarComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -79,12 +46,6 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdCardModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdNativeDateModule,
     ReactiveFormsModule,
   ],
   providers: [
@@ -95,37 +56,6 @@ const appRoutes: Routes = [
     AuthGuard
   ],
   exports: [
-    MdAutocompleteModule,
-    MdButtonModule,
-    MdButtonToggleModule,
-    MdCardModule,
-    MdCheckboxModule,
-    MdChipsModule,
-    MdStepperModule,
-    MdDatepickerModule,
-    MdDialogModule,
-    MdExpansionModule,
-    MdGridListModule,
-    MdIconModule,
-    MdInputModule,
-    MdListModule,
-    MdMenuModule,
-    MdNativeDateModule,
-    MdPaginatorModule,
-    MdProgressBarModule,
-    MdProgressSpinnerModule,
-    MdRadioModule,
-    MdRippleModule,
-    MdSelectModule,
-    MdSidenavModule,
-    MdSliderModule,
-    MdSlideToggleModule,
-    MdSnackBarModule,
-    MdSortModule,
-    MdTableModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdTooltipModule,
   ],
   bootstrap: [AppComponent]
 })
