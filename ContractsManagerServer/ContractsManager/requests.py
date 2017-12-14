@@ -1,6 +1,7 @@
 import json
 import responses
 import database
+from bson import json_util
 
 
 class Requests:
@@ -25,8 +26,21 @@ class Requests:
 
         # Initialize response
         response = responses.Responses()
+        response.setResponse("response", False)
+
+        result = database.selectAllWebContracts()
+        contractsList = []
+
+        for c in result:
+            for r in c:
+                if r == "contratti web":
+                    for a in c[r]:
+                        contractsList.append(a)
+
+
+
+        response.setResponse("contractsList", json_util.dumps(contractsList))
         response.setResponse("response", True)
-        response.setResponse("test", "test")
 
         return response
 

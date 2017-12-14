@@ -4,13 +4,13 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {HttpSerService} from '../_services/http/http-ser.service';
 
 @Component({
-  selector: 'app-mostra-contratti-web',
-  templateUrl: './mostra-contratti-web.component.html',
-  styleUrls: ['./mostra-contratti-web.component.css']
+  selector: 'app-nuovo-contratto-web',
+  templateUrl: './nuovo-contratto-web.component.html',
+  styleUrls: ['./nuovo-contratto-web.component.css']
 })
-export class MostraContrattiWebComponent implements OnInit {
+export class NuovoContrattoWebComponent implements OnInit {
 
-  // Initialize vars
+// Initialize vars
   slug: string;
   private sub: any;
   req = {'r': 'GetAllWebContracts'};
@@ -35,7 +35,7 @@ export class MostraContrattiWebComponent implements OnInit {
 
           // if post response is succesful, transfers into devicesJSONList the result, else redirects at page-not-found
           if (response['response']) {
-            this.variabile = response['test'];
+            this.variabile = JSON.parse(response['contractsList']);
           } else {
             this.router.navigate(['/page-not-found']);
           }

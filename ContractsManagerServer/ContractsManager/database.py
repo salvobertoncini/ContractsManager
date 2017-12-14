@@ -64,3 +64,11 @@ def selectDevicesWithSlug(slug):
     closeMongoDB(client)
 
     return collection.find({"TelephoneInfo.IMEI": slug})
+
+
+def selectAllWebContracts():
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find()

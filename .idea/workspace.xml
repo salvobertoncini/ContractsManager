@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34688a0c-97ad-40b9-a871-920ef9883e12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/_services/http/http-ser.service.ts" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/_services/http/http-ser.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-web/mostra-contratti-web.component.css" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-user/mostra-contratti-user.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-web/mostra-contratti-web.component.html" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-user/mostra-contratti-user.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-web/mostra-contratti-web.component.spec.ts" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-user/mostra-contratti-user.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-web/mostra-contratti-web.component.ts" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/mostra-contratti-user/mostra-contratti-user.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContractsManagerClient/src/app/app.module.ts" afterPath="$PROJECT_DIR$/ContractsManagerClient/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py" afterPath="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py" afterPath="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -31,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/home.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -56,8 +59,8 @@
       <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="244">
+              <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -65,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requests.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="requests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -81,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/responses.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -102,9 +105,9 @@
       <list>
         <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/settings.py" />
         <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/urls.py" />
+        <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/home.py" />
         <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py" />
         <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py" />
-        <option value="$PROJECT_DIR$/ContractsManagerServer/ContractsManager/home.py" />
       </list>
     </option>
   </component>
@@ -462,14 +465,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -507,28 +511,8 @@
     <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/responses.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -555,6 +539,26 @@
         <state relative-caret-position="119">
           <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ContractsManagerServer/ContractsManager/requests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

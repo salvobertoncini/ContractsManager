@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MostraContrattiWebComponent } from './mostra-contratti-web.component';
+import { NuovoContrattoWebComponent } from './nuovo-contratto-web.component';
 
-describe('MostraContrattiWebComponent', () => {
-  let component: MostraContrattiWebComponent;
-  let fixture: ComponentFixture<MostraContrattiWebComponent>;
+describe('NuovoContrattoWebComponent', () => {
+  let component: NuovoContrattoWebComponent;
+  let fixture: ComponentFixture<NuovoContrattoWebComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MostraContrattiWebComponent ]
+      declarations: [ NuovoContrattoWebComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MostraContrattiWebComponent);
+    fixture = TestBed.createComponent(NuovoContrattoWebComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
