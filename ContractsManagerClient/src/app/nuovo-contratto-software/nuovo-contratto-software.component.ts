@@ -17,6 +17,8 @@ export class NuovoContrattoSoftwareComponent implements OnInit {
   req = {'r': 'GetAllSoftwareContracts'};
   variabile: any;
 
+  selectedRow: Object = 'Nessun elemento selezionato';
+
   constructor(private router: Router, private route: ActivatedRoute, private _sanitizer: DomSanitizer, private _httpService: HttpSerService) { }
 
   // Call method into ngOnInit when this page is loading
@@ -42,5 +44,9 @@ export class NuovoContrattoSoftwareComponent implements OnInit {
           }
         }
       );
+  }
+
+  onClick(){
+    this.router.navigate(['/nuovo-contratto-software/'+ this.selectedRow]);
   }
 }

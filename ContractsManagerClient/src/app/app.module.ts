@@ -26,13 +26,17 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MostraContrattiUserComponent } from './mostra-contratti-user/mostra-contratti-user.component';
 import { NuovoContrattoWebComponent } from './nuovo-contratto-web/nuovo-contratto-web.component';
 import { NuovoContrattoSoftwareComponent } from './nuovo-contratto-software/nuovo-contratto-software.component';
+import { NuovoContrattoWebSelectedComponentComponent } from './nuovo-contratto-web-selected-component/nuovo-contratto-web-selected-component.component';
+import { NuovoContrattoSoftwareSelectedComponentComponent } from './nuovo-contratto-software-selected-component/nuovo-contratto-software-selected-component.component';
 
 // Array with all routing paths
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', redirectTo: '', pathMatch: 'full'},
   {path: 'nuovo-contratto-web', component: NuovoContrattoWebComponent},
+  {path: 'nuovo-contratto-web/:slug', component: NuovoContrattoWebSelectedComponentComponent},
   {path: 'nuovo-contratto-software', component: NuovoContrattoSoftwareComponent},
+  {path: 'nuovo-contratto-software/:slug', component: NuovoContrattoSoftwareSelectedComponentComponent},
   {path: 'mostra-contratti-user', component: MostraContrattiUserComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -46,6 +50,8 @@ const appRoutes: Routes = [
     MostraContrattiUserComponent,
     NuovoContrattoWebComponent,
     NuovoContrattoSoftwareComponent,
+    NuovoContrattoWebSelectedComponentComponent,
+    NuovoContrattoSoftwareSelectedComponentComponent,
   ],
   imports: [
     RouterModule.forRoot(

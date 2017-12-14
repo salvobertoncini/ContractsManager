@@ -2,8 +2,19 @@
   nuovo-contratto-software works!
 </p>
 
-<select>
+<select [(ngModel)]="selectedRow" required>
   <option *ngFor="let contract of variabile">
     {{ contract }}
   </option>
 </select>
+
+<button (click)="onClick()">
+  NEXT
+</button>
+
+<div>
+  <p>
+    Selected Row : <strong>{{selectedRow}}</strong>
+  </p>
+</div>
+

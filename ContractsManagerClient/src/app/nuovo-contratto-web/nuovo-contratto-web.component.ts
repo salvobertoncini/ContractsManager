@@ -15,8 +15,16 @@ export class NuovoContrattoWebComponent implements OnInit {
   private sub: any;
   req = {'r': 'GetAllWebContracts'};
   variabile: any;
+  selectedRow: Object = 'Nessun elemento selezionato';
 
-  constructor(private router: Router, private route: ActivatedRoute, private _sanitizer: DomSanitizer, private _httpService: HttpSerService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private _sanitizer: DomSanitizer, private _httpService: HttpSerService)
+  {
+
+  }
+
+  showSelectValue = function(mySelect) {
+    console.log(mySelect);
+  }
 
   // Call method into ngOnInit when this page is loading
   ngOnInit() {
@@ -41,5 +49,9 @@ export class NuovoContrattoWebComponent implements OnInit {
           }
         }
       );
+  }
+
+  onClick(){
+    this.router.navigate(['/nuovo-contratto-web/'+ this.selectedRow]);
   }
 }
