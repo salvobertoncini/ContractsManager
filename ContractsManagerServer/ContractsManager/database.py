@@ -1,28 +1,66 @@
 from pymongo import MongoClient
+import json
 
-import MySQLdb
+"""
+per collegarsi al db:
+exec su kinect
+mongo
+use SpyTorch
+db.aggregate.find() per vedere tutto
+"""
 
-DBNAME = 'cirs'
-DBCOLLECTION = 'aggregate'
+DBNAME = 'ContractsManager'
+DBCOLLECTION = 'collection'
 DBHOST = 'localhost'
 DBPORT = 32768
 DBUSERNAME = ''
 DBPASSWORD = ''
 
-db = MySQLdb.connect("localhost", "root", "pwd", "nomedb")
-
 #Connect Mongo by means of creation of MongoClient
-def connectDB():
-    cursor = db.cursor()
-    return cursor
+def connectMongoDB():
+    return MongoClient(DBHOST, DBPORT)
 
 #Close MongoClient connection
-def closeDB():
-    db.close()
+def closeMongoDB(client):
+    client.close()
 
-def printdbversion(cursor):
-    cursor.execute("SELECT VERSION()")
-    data = cursor.fetchone()
+#Select the collection, implying dbname as default DBNAME
+def selectCollectionMongoDB(client, dbcollection=DBCOLLECTION, dbname=DBNAME):
+    db = client[dbname]
+    return db[dbcollection]
 
-    for d in data:
-        print d
+#Select the latest N elements of a collection, returning them in a list
+def selectLatestNElementsMongoDB(N):
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    if N == 0:
+        return list(collection.find())
+    else:
+        return list(collection.find().skip(collection.count() - N))
+
+
+def selectAllUsers():
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find()
+
+
+# Select user with slug
+def selectUserWithSlug(slug):
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find({"UserInfo": {"Username": slug}})
+
+
+def selectDevicesWithSlug(slug):
+    client = connectMongoDB()
+    collection = selectCollectionMongoDB(client)
+    closeMongoDB(client)
+
+    return collection.find({"TelephoneInfo.IMEI": slug})
